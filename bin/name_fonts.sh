@@ -1,7 +1,8 @@
+#!/usr/bin/sh
+
 # This script extract font name and rename fonts to wotf
 
 # read one line at a time with read
-
 while read -r line
 do
     # scan file and create a name and style with space substituted by _
