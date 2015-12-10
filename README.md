@@ -5,7 +5,7 @@ To use the script, clone the repository or copy and paste the script
 into your `~/bin` folder. Then navigate to the directory where
 fonts are located. Then execute the command to rename them all.
 
-        ./name_fonts.sh
+    ~/bin/name_fonts.sh
 
 # Limitation
 This script currently only name files adding `.wotf` extension.
