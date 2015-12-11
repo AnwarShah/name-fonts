@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 # This script extract font name and rename fonts to wotf
 
