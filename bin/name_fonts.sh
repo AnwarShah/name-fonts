@@ -9,16 +9,15 @@ do
 	type=`file -b "$line" | cut -d , -f 1`
   if [[ "$type" =~ 'Web Open Font Format' ]];
   then
-    name=`fc-scan --format "%{postscriptname}" "$line" | tr ' ' '_'`
-    
-    echo "$line->$name.wotf"
-    mv "$line" "$name.wotf"
+    name=`fc-scan --format "%{postscriptname}-%{weight}-%{slant}-%{width}" "$line" | tr ' ' '_'`
+
+    echo "$line->$name.woff"
+    mv "$line" "$name.woff"
   elif [[ "$type" =~ 'TrueType font data' ]];
   then
-    name=`fc-scan --format "%{postscriptname}" "$line" | tr ' ' '_'`
-    
+    name=`fc-scan --format "%{postscriptname}-%{weight}-%{slant}-%{width}" "$line" | tr ' ' '_'`
+
     echo "$line->$name.ttf"
     mv "$line" "$name.ttf"
   fi
 done < <(find . -maxdepth 1 -type f)
-
